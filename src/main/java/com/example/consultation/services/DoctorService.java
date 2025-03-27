@@ -18,6 +18,15 @@ public class DoctorService {
         return doctorRepository.findAll();
     }
 
+    public Doctor getDoctorById(Long id) {
+        Optional<Doctor> doctor = doctorRepository.findById(id);
+        if (doctor.isPresent()) {
+            return doctor.get();
+        } else {
+            throw new RuntimeException("Doctor not found!");
+        }
+    }
+
     public Doctor createDoctor(Doctor doctor) {
         return doctorRepository.save(doctor);
     }

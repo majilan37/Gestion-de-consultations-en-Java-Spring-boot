@@ -18,6 +18,15 @@ public class PatientService {
         return patientRepository.findAll();
     }
 
+    public Patient getPatientById(Long id) {
+        Optional<Patient> patient = patientRepository.findById(id);
+        if (patient.isPresent()) {
+            return patient.get();
+        } else {
+            throw new RuntimeException("Patient not found!");
+        }
+    }
+
     public Patient createPatient(Patient patient) {
         return patientRepository.save(patient);
     }

@@ -23,6 +23,12 @@ public class DoctorController {
         return doctorService.getAllDoctors();
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<Doctor> getDoctorById(@PathVariable Long id) {
+        Doctor doctor = doctorService.getDoctorById(id);
+        return new ResponseEntity<>(doctor, HttpStatus.OK);
+    }
+
     @PostMapping
     public ResponseEntity<Doctor> createDoctor(@RequestBody Doctor doctor) {
       

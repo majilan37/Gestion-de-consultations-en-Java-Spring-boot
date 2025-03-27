@@ -5,12 +5,11 @@ import com.example.consultation.services.ConsultationService;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping("/consultations")
 public class ConsultationController { 
     private final ConsultationService consultationService;
