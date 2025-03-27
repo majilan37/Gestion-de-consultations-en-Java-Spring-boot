@@ -3,7 +3,7 @@ package com.example.consultation.models;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Data
@@ -20,7 +20,7 @@ public class Consultation {
     @ManyToOne
     private Patient patient;
 
-    private LocalDate consultationDate;
+    private LocalDateTime consultationDate;
     private String notes;
 
     // Getters and Setters
@@ -41,11 +41,11 @@ public class Consultation {
         this.patient = patient;
     }
 
-    public LocalDate getConsultationDate() {
+    public LocalDateTime getConsultationDate() {
         return consultationDate;
     }
 
-    public void setConsultationDate(LocalDate consultationDate) {
+    public void setConsultationDate(LocalDateTime consultationDate) {
         this.consultationDate = consultationDate;
     }
 
